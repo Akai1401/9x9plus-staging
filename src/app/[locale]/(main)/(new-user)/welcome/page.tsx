@@ -5,13 +5,11 @@ import WelcomeList2 from '@/components/welcome/WelcomeList2';
 import WelcomeList3 from '@/components/welcome/WelcomeList3';
 import WelcomeList4 from '@/components/welcome/WelcomeList4';
 import WelcomeList5 from '@/components/welcome/WelcomeList5';
-import Image from 'next/image';
 
 const page = () => {
   return (
-    <div className="flex flex-col items-center ">
-      <Image width="500" height="500" className="w-[200px] h-[130px]" alt="logo" src="/assets/logo-9x9.png" />
-      <div className="title-welcome flex flex-col">
+    <div className="flex flex-col items-center pt-20">
+      <div className="title-welcome">
         <h1 className={`${montserrat.variable} w-[19rem] text-title-welcome`}>HÀNH TRÌNH LAN TOẢ GIÁ TRỊ BẮT ĐẦU TỪ ĐÂY</h1>
       </div>
       <p className="subtitle-welcome pt-[0.75rem]">Tấm vé mở ra hành trình kết nối thịnh vượng toàn cầu</p>

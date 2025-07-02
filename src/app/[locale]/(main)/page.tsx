@@ -1,14 +1,11 @@
-import { Footer } from '@/components/header-footer/Footer';
-import { Header } from '@/components/header-footer/Header';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 
-const page = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen bg-home">
+    <div className="min-h-screen bg-home relative">
       <Header />
-
       <Footer />
     </div>
   );
-};
-
-export default page;
+}

@@ -1,10 +1,9 @@
 'use client';
-import { createCookie } from '@/actions/cookie';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-const useSafePalWallet = () => {
+const useSafePalWallet = (type: 'large' | 'small') => {
   const router = useRouter();
   const [isConnecting, setIsConnecting] = useState<boolean>(false);
   const [addressWallet, setAddressWallet] = useState<string>('');
@@ -27,14 +26,11 @@ const useSafePalWallet = () => {
             method: 'personal_sign',
             params: [message, response[0]]
           });
-          createCookie({
-            name: 'walletAddress',
-            value: response[0],
-          });
-
           toast.success('Wallet connected successfully!');
 
-          router.replace('/policy-terms');
+          if (type === 'large') {
+            router.replace('/policy-terms');
+          }
         }
       }
     } catch (error) {
